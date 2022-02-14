@@ -15,11 +15,11 @@ var workExamplesImages = [
 ];
 
 var workExamplesLinks = [
-  "../Works/JS_Сlock/index.html",
-  "../Works/JS_Pratice/index.html",
-  "../Works/JS_ToDo/index.html",
-  "../Works/JS_Galaxy/index.html",
-  "../Works/JS_Moving_Objects/index.html",
+  "Works/JS_Сlock/index.html",
+  "Works/JS_Pratice/index.html",
+  "Works/JS_ToDo/index.html",
+  "Works/JS_Galaxy/index.html",
+  "Works/JS_Moving_Objects/index.html",
 ];
 
 var imageIndex = 0;
