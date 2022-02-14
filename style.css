@@ -1,0 +1,886 @@
+/* vars */
+:root {
+  --footterjumpvalue: ;
+  --navjumpvalue: ;
+}
+/* vars */
+
+/* fonts */
+@font-face {
+  font-family: Kaligrafica;
+  src: url(fonts/Kaligrafica.ttf);
+}
+
+@font-face {
+  font-family: Victorian Gothic One;
+  src: url(fonts/Victorian\ Gothic\ One.ttf);
+}
+
+@font-face {
+  font-family: "Heir of light";
+  src: url(./fonts/HeirofLightRegular.ttf), url(./fonts/HeirofLightBold.ttf);
+  font-weight: normal, bold;
+}
+/* fonts */
+
+body {
+  padding: 0;
+  margin: 0;
+  background: #fff;
+}
+
+p {
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+pre {
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+header {
+  display: flex;
+  box-sizing: border-box;
+  position: relative;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  opacity: 0;
+  animation-name: header-manifestation;
+  animation-delay: 3s;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+#playbutton {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  right: 10px;
+  top: 5px;
+  border-radius: 50%;
+  background: url(index.files/bgmoff.png);
+  background-size: contain;
+  transition: 0.7s;
+}
+
+#playbutton:hover {
+  cursor: pointer;
+}
+
+.langchange-button {
+  width: 47px;
+  height: 25px;
+  padding-left: 2px;
+  padding-right: 2px;
+  display: flex;
+  position: relative;
+  justify-content: start;
+  align-items: center;
+  position: absolute;
+  right: 50px;
+  top: 8px;
+  box-sizing: border-box;
+  border: 2px solid #263238;
+  border-radius: 8px;
+  transition: 1s;
+}
+
+.langchange-button:hover {
+  cursor: pointer;
+}
+
+.changedlanguage {
+  justify-content: end;
+  background: #a59263;
+}
+
+#changer {
+  width: 17px;
+  height: 17px;
+  margin-top: 1px;
+  margin-bottom: 1px;
+  box-sizing: border-box;
+  border-radius: 50%;
+  background: #263238;
+  z-index: 1;
+}
+
+.langtext {
+  position: absolute;
+  top: 1px;
+  right: 2px;
+  color: #000;
+  font-size: 17px;
+  font-weight: bolder;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.changedlanguagetext {
+  left: 2px;
+}
+
+#bgminfobox {
+  width: 181px;
+  height: 20px;
+  display: none;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  padding: 3px;
+  top: 40px;
+  right: 10px;
+  border-radius: 10px;
+  border: 2px solid #263238;
+  color: #263238;
+  font-size: 15px;
+  font-weight: bold;
+  animation-name: manifestation;
+  animation-duration: 1s;
+  transition: 0.5s;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+  overflow: hidden;
+}
+
+#bgminfobox:hover {
+  height: 100px;
+}
+
+.track {
+  font-size: 13px;
+  font-weight: bold;
+  margin: 0;
+  margin-bottom: 2px;
+  transition: 0.7s;
+}
+
+.track:first-child {
+  margin-top: 20px;
+}
+
+.track:hover {
+  color: #a59263;
+  cursor: pointer;
+}
+
+.myphoto-box {
+  width: 180px;
+  height: 180px;
+  position: relative;
+  border-radius: 50%;
+  overflow: hidden;
+  animation-name: shawow-glow;
+  animation-duration: 6s;
+  animation-delay: 0s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-out;
+}
+
+.myphoto-box img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  transform: rotate(10deg);
+  transition: 1s;
+}
+
+.myphoto-box img:hover {
+  transform: rotate(-10deg);
+}
+
+header p:nth-child(2) {
+  position: absolute;
+  margin: 0;
+  font-size: 60px;
+  font-weight: 500;
+  font-family: Kaligrafica;
+  text-shadow: 0px 2px 4px #000;
+  color: #a59263;
+  top: 30px;
+  left: 200px;
+  cursor: default;
+}
+
+header p:nth-child(3) {
+  position: absolute;
+  margin: 0;
+  font-size: 25px;
+  font-family: "Heir of light";
+  color: #000;
+  font-weight: bold;
+  top: 83px;
+  left: 200px;
+  cursor: default;
+}
+
+header a:nth-child(4) {
+  position: absolute;
+  margin: 0;
+  top: 140px;
+  left: 200px;
+  transition: 1s;
+}
+
+header a:nth-child(4):hover {
+  transform: scale(1.3);
+}
+
+.works-img {
+  animation-name: icon-flash;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+header a img:hover {
+  animation-play-state: paused;
+}
+
+header p:nth-child(5) {
+  position: absolute;
+  margin: 0;
+  font-family: Kaligrafica;
+  font-size: 22px;
+  font-weight: bold;
+  text-shadow: 0 -2px 2px #000;
+  color: #888;
+  top: 145px;
+  left: 260px;
+  cursor: default;
+}
+
+/* mobile block */
+.header-mobile {
+  display: none;
+  opacity: 0;
+  animation-name: header-manifestation;
+  animation-delay: 3s;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+.myphoto-box-mobile {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  transition: 1s;
+  animation-name: shawow-glow;
+  animation-duration: 6s;
+  animation-delay: 0s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-out;
+}
+
+.myphoto-box-mobile img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  transform: rotate(10deg);
+  transition: 1s;
+}
+
+.myphoto-box-mobile:hover {
+  transform: rotate(-10deg);
+}
+
+.header-mobile a:nth-child(5) {
+  transition: 1s;
+}
+
+.header-mobile a:nth-child(5):hover {
+  transform: scale(1.2);
+}
+
+.header-mobile a img:hover {
+  animation-play-state: paused;
+}
+/* mobile block */
+
+.nav-wrapper {
+  padding-top: 4px;
+  padding-bottom: 4px;
+  border-top: 2px solid #a59263;
+  border-bottom: 2px solid #a59263;
+  animation-name: manifestation, nav-moving;
+  animation-duration: 2s, 2s;
+  animation-timing-function: ease-out, linear;
+}
+
+nav {
+  min-width: 680px;
+  display: flex;
+  background-color: #a59263;
+  justify-content: space-evenly;
+}
+
+nav:hover {
+  background-color: rgba(165, 146, 99, 0.9);
+}
+
+.navbox {
+  display: flex;
+  color: #000;
+  align-items: center;
+}
+
+.navbox p {
+  margin: 0;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 8px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 10px;
+  font-weight: bold;
+  animation-duration: 7s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in;
+}
+
+.navbox p a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.navtext {
+  z-index: 2;
+}
+
+.popup-box {
+  position: relative;
+}
+
+.popup-box::before {
+  animation-name: manifestation;
+  animation-duration: 0.5s;
+}
+
+.popup-box::after {
+  animation-name: manifestation;
+  animation-duration: 0.5s;
+}
+
+.popup-box:hover::before {
+  content: "Что-то будет тут ;)";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 150px;
+  height: 100px;
+  background: rgba(207, 215, 220, 0.9);
+  border-radius: 5px;
+  top: -100px;
+  left: -8px;
+  z-index: 3;
+}
+
+.popup-box:hover::after {
+  content: "";
+  position: absolute;
+  border: 10px solid transparent;
+  border-top: 10px solid rgba(207, 215, 220, 0.9);
+  top: 0;
+  left: 58px;
+  z-index: 1;
+}
+
+.popup-2:hover::before {
+  left: -15px;
+}
+
+.popup-2:hover::after {
+  left: 52px;
+}
+
+.popup-3:hover::before {
+  left: -11px;
+}
+
+.popup-3:hover::after {
+  left: 55px;
+}
+
+.popup-4:hover::before {
+  left: -27px;
+}
+
+.popup-4:hover::after {
+  left: 40px;
+}
+
+main {
+  display: flex;
+  transform: translateX(-100vw);
+  height: calc(100vh - 306px);
+  background: #263238;
+  padding-top: 30px;
+  padding-left: 15px;
+  padding-right: 15px;
+  overflow-y: auto;
+  animation-name: slide-side;
+  animation-duration: 1s;
+  animation-direction: reverse;
+  animation-delay: 1.9s;
+}
+
+article {
+  display: flex;
+  width: 500px;
+  margin-left: auto;
+  flex-direction: column;
+}
+
+aside {
+  display: flex;
+  width: 290px;
+  margin-left: 50px;
+  margin-right: auto;
+  flex-direction: column;
+}
+
+.myworks {
+  height: 150px;
+  overflow: hidden;
+}
+
+.myworks img {
+  width: 100%;
+  height: 100%;
+}
+
+#workprev {
+  width: 42px;
+  height: 20px;
+  margin-left: 15px;
+  padding: 0;
+  transition: 1s;
+  border: 2px solid #a59263;
+  box-sizing: border-box;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+  font-size: 13px;
+  font-weight: bolder;
+}
+
+#worknext {
+  width: 42px;
+  height: 20px;
+  margin-left: 5px;
+  padding: 0;
+  transition: 1s;
+  border: 2px solid #a59263;
+  box-sizing: border-box;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  font-size: 13px;
+  font-weight: bolder;
+}
+
+#workprev:hover {
+  background: #a59263;
+}
+
+#worknext:hover {
+  background: #a59263;
+}
+
+#workprev:focus {
+  outline: none;
+}
+
+#worknext:focus {
+  outline: none;
+}
+
+.info-block {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+}
+
+.info-block2 {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+  align-content: center;
+}
+
+.upper_block {
+  display: flex;
+}
+
+.upper_block p {
+  margin: 0;
+  margin-left: 5px;
+  font-size: 18px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  color: #fff;
+  font-weight: bold;
+  text-shadow: 0 1px 2px #000;
+}
+
+.textblock {
+  margin-top: 10px;
+  box-sizing: border-box;
+  border: 1px solid #fff;
+  border-radius: 3px;
+  background: #ddd;
+}
+
+.textblock p {
+  margin: 5px 10px 5px 10px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-weight: bold;
+  color: #000;
+  font-size: 14px;
+  line-height: 18px;
+  text-shadow: 0 1px 1px #333;
+}
+
+.footer-wrapper {
+  padding-top: 4px;
+  padding-bottom: 4px;
+  border-top: 2px solid #a59263;
+  border-bottom: 2px solid #a59263;
+  animation-name: manifestation, footer-moving;
+  animation-duration: 2s, 2s;
+  animation-timing-function: ease-out, linear;
+  animation-fill-mode: forwards, none;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20px;
+  background-color: #a59263;
+}
+
+footer:hover {
+  background-color: rgba(165, 146, 99, 0.9);
+}
+
+footer p {
+  margin: 5px;
+  font-size: 12px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bolder;
+  text-align: center;
+  color: #000;
+}
+
+/* animations */
+@keyframes icon-flash {
+  0% {
+    opacity: 1;
+  }
+  15% {
+    opacity: 0.7;
+  }
+  20% {
+    opacity: 1;
+  }
+  35% {
+    opacity: 0.7;
+  }
+  40% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes navtext-glow {
+  0% {
+    color: #000;
+  }
+  50% {
+    color: #fff;
+    text-shadow: 0 1px 1px #000;
+  }
+  100% {
+    color: #000;
+  }
+}
+
+@keyframes shawow-glow {
+  0% {
+    box-shadow: 0 0 5px 2px #000;
+  }
+  50% {
+    box-shadow: 0 0 25px 2px #78909c;
+  }
+  100% {
+    box-shadow: 0 0 5px 2px #000;
+  }
+}
+
+@keyframes manifestation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-side {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-100vw);
+    opacity: 0.5;
+  }
+}
+
+@keyframes footer-moving {
+  0% {
+    transform: translateY(0px);
+  }
+  35% {
+    transform: translateY(var(--footterjumpvalue));
+  }
+  65% {
+    transform: translateY(var(--footterjumpvalue));
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes nav-moving {
+  0% {
+    transform: translateY(-232px);
+  }
+  35% {
+    transform: translateY(var(--navjumpvalue));
+  }
+  65% {
+    transform: translateY(var(--navjumpvalue));
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes header-manifestation {
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes myphoto-rotation {
+  100% {
+    transform: rotate(0deg);
+  }
+}
+/* animations */
+
+/* adaptation */
+@media screen and (max-width: 1024px) {
+  main {
+    justify-content: space-between;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  article {
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: 0;
+  }
+
+  aside {
+    max-width: 300px;
+    margin-left: 50px;
+    margin-right: auto;
+  }
+
+  .info-block {
+    width: 100%;
+  }
+
+  .info-block2 {
+    width: 100%;
+  }
+
+  .upper_block {
+    width: 100%;
+  }
+
+  .textblock {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  header {
+    display: none;
+  }
+
+  /* mobile header */
+  .header-mobile {
+    display: flex;
+    height: 150px;
+    position: relative;
+    margin-top: 8px;
+    padding-left: 10px;
+  }
+
+  .myphoto-box-mobile {
+    animation-name: shawow-glow;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+
+  .header-mobile p:nth-child(2) {
+    position: absolute;
+    margin: 0;
+    font-size: 40px;
+    line-height: 40px;
+    font-weight: 500;
+    font-family: Kaligrafica;
+    text-shadow: 0 2px 3px #000;
+    color: #a59263;
+    top: 10px;
+    left: 170px;
+    cursor: default;
+  }
+
+  .header-mobile p:nth-child(3) {
+    position: absolute;
+    margin: 0;
+    font-size: 40px;
+    line-height: 40px;
+    font-weight: 500;
+    font-family: Kaligrafica;
+    text-shadow: 0 2px 3px #000;
+    color: #a59263;
+    top: 36px;
+    left: 170px;
+    cursor: default;
+  }
+
+  .header-mobile pre:nth-child(4) {
+    position: absolute;
+    margin: 0;
+    font-size: 14px;
+    font-family: "Heir of light";
+    font-weight: bold;
+    color: #000;
+    top: 78px;
+    left: 170px;
+    cursor: default;
+  }
+
+  .header-mobile a:nth-child(5) {
+    position: absolute;
+    margin: 0;
+    top: 110px;
+    left: 155px;
+  }
+
+  .header-mobile p:nth-child(6) {
+    position: absolute;
+    margin: 0;
+    font-family: Kaligrafica;
+    font-size: 20px;
+    font-weight: bold;
+    text-shadow: 0 -2px 2px #000;
+    color: #888;
+    top: 113px;
+    left: 200px;
+    cursor: default;
+  }
+
+  .header-mobile img:nth-child(7) {
+    height: 175px;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 130px;
+    opacity: 0.3;
+  }
+  /* mobile header */
+
+  .nav-wrapper {
+    margin-top: 10px;
+  }
+
+  nav {
+    min-width: auto;
+    flex-direction: column;
+    align-content: center;
+    flex-wrap: wrap;
+  }
+
+  main {
+    padding-left: 40px;
+    padding-right: 40px;
+    height: calc(100vh - 370px);
+  }
+
+  .upper_block p {
+    font-size: 16px;
+  }
+
+  .textblock p {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  main {
+    flex-direction: column;
+    height: calc(100vh - 370px);
+  }
+
+  article {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+    min-width: 100%;
+  }
+
+  aside {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+    min-width: 100%;
+  }
+}
+
+@media print {
+  #playbutton {
+    display: none;
+  }
+
+  .langchange-button {
+    display: none;
+  }
+
+  .menu {
+    display: none;
+  }
+
+  .myworksblock {
+    display: none;
+  }
+
+  footer {
+    display: none;
+  }
+}
+/* adaptation */

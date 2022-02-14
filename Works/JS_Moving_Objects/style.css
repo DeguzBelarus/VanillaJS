@@ -1,0 +1,31 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  text-decoration: none;
+  list-style-type: none;
+}
+
+body {
+  background: #000;
+  margin: 50px;
+}
+
+#block {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  bottom: 40vh;
+  left: calc(50vw - 50px);
+  box-sizing: border-box;
+  border: 1px solid red;
+  z-index: 1;
+}
+
+#shelf {
+  width: 400px;
+  height: 30px;
+  position: absolute;
+  top: 60vh;
+  left: calc(50vw - 200px);
+  background: greenyellow;
+}
